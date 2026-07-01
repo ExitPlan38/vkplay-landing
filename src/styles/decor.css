@@ -1,0 +1,135 @@
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top,
+            rgba(123, 0, 255, .22),
+            transparent 45%),
+
+        radial-gradient(circle at bottom,
+            rgba(0, 120, 255, .18),
+            transparent 45%),
+
+        linear-gradient(
+            180deg,
+            #22003f 0%,
+            #170128 45%,
+            #11011d 100%
+        );
+
+    z-index: -10;
+}
+
+.background-glow {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(140px);
+
+    opacity: .45;
+
+    animation: moveGlow 12s ease-in-out infinite;
+
+    z-index: -9;
+}
+
+/* Левое свечение */
+
+.background-glow--left {
+
+    width: 500px;
+    height: 500px;
+
+    left: -180px;
+    top: -120px;
+
+    background: #2d8dff;
+}
+
+/* Центральное */
+
+.background-glow--center {
+
+    width: 700px;
+    height: 700px;
+
+    left: 50%;
+    top: -260px;
+
+    transform: translateX(-50%);
+
+    background: #7b00ff;
+
+    opacity: .25;
+}
+
+/* Правое */
+
+.background-glow--right {
+
+    width: 500px;
+    height: 500px;
+
+    right: -160px;
+    top: 120px;
+
+    background: #ff33aa;
+}
+
+.background-noise {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size: 14px 14px;
+
+    opacity: .12;
+
+    pointer-events: none;
+
+    z-index: -8;
+}
+
+@keyframes moveGlow {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-20px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+.background-glow{
+
+width:300px;
+height:300px;
+
+filter:blur(100px);
+
+}
+
+}

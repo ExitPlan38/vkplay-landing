@@ -1,0 +1,269 @@
+.hero {
+    position: relative;
+    min-height: calc(100vh - 88px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 20px 20px 80px;
+}
+
+.hero__container {
+    position: relative;
+
+    width: min(1280px, 100%);
+    min-height: calc(100vh - 100px);
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transform: translateY(-35px);
+}
+
+.hero__badge {
+    position: relative;
+    z-index: 5;
+
+    opacity: 0;
+
+    animation: fadeUp .6s ease forwards;
+    animation-delay: .15s;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 620px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__title {
+    margin-top: 34px;
+
+    font-size: clamp(46px, 6vw, 78px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -.04em;
+
+    opacity: 0;
+
+    animation: fadeUp .8s ease forwards;
+    animation-delay: .35s;
+}
+
+.hero__description {
+    margin-top: 28px;
+
+    max-width: 500px;
+
+    font-size: clamp(18px, 1.8vw, 22px);
+
+    line-height: 1.6;
+
+    color: rgba(255,255,255,.82);
+
+    opacity: 0;
+
+    animation: fadeUp .8s ease forwards;
+    animation-delay: .55s;
+}
+
+.hero__graphics {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.hero__character,
+.hero__vehicle {
+
+    position: absolute;
+
+    width: 360px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    backdrop-filter: none;
+
+    box-shadow: none;
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+.hero__character {
+
+    left: -40px;
+    bottom: -10px;
+
+    animation:
+        fadeUp 1s ease forwards,
+        floatLeft 5s ease-in-out infinite;
+
+    animation-delay:
+        .45s,
+        1.45s;
+}
+
+.hero__vehicle {
+
+    right: -40px;
+    bottom: -10px;
+
+    animation:
+        fadeUp 1s ease forwards,
+        floatRight 6s ease-in-out infinite;
+
+    animation-delay:
+        .65s,
+        1.65s;
+}
+
+.scroll-wrapper {
+
+    margin-top: 44px;
+
+    opacity: 0;
+
+    animation: fadeUp .8s ease forwards;
+    animation-delay: .75s;
+}
+
+@keyframes floatLeft {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatRight {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width:1200px) {
+
+    .hero__character,
+    .hero__vehicle {
+
+        width: 300px;
+    }
+
+    .hero__character {
+
+        left: -10px;
+    }
+
+    .hero__vehicle {
+
+        right: -10px;
+    }
+}
+
+@media (max-width:992px) {
+
+    .hero__character,
+    .hero__vehicle {
+
+        width: 240px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .hero {
+
+        padding: 10px 20px 60px;
+    }
+
+    .hero__container {
+
+        min-height: auto;
+
+        padding-top: 20px;
+    }
+
+    .hero__title {
+
+        margin-top: 28px;
+    }
+
+    .hero__description {
+
+        max-width: 340px;
+    }
+
+    .hero__graphics {
+
+        position: relative;
+
+        width: 100%;
+        height: 320px;
+
+        margin-top: 40px;
+    }
+
+    .hero__character {
+
+        left: 50%;
+        bottom: 0;
+
+        width: 220px;
+
+        transform: translateX(-50%);
+    }
+
+    .hero__vehicle {
+
+        display: none;
+    }
+}

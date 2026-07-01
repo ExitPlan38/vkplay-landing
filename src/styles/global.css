@@ -1,0 +1,101 @@
+/* ========================= */
+/* Сброс */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --background: #13011f;
+    --text: #ffffff;
+
+    --blue: #198dff;
+    --pink: #ff37b8;
+    --green: #d5ff3e;
+
+}
+
+/* ========================= */
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+body {
+
+    min-width: 320px;
+
+    font-family: "Manrope", "Segoe UI", sans-serif;
+
+    color: var(--text);
+
+    background: var(--background);
+
+    overflow-x: hidden;
+}
+
+#root {
+
+    min-height: 100vh;
+}
+
+.app {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+main {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+button {
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    font: inherit;
+}
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+}
+
+/* ========================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(24px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
