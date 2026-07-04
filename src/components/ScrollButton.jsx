@@ -1,6 +1,9 @@
+import { heroContent } from "../data/content";
+
 import "../styles/scroll.css";
 
 function ScrollButton() {
+
   const scrollToGames = () => {
     const section = document.getElementById("games");
 
@@ -18,7 +21,7 @@ function ScrollButton() {
       <button
         className="scroll-button"
         onClick={scrollToGames}
-        aria-label="Перейти к следующему разделу"
+        aria-label={heroContent.scrollText}
       >
         <svg
           className="scroll-icon"
@@ -45,7 +48,7 @@ function ScrollButton() {
       </button>
 
       <span className="scroll-text">
-        Вперёд за играми
+        {heroContent.scrollText}
       </span>
 
     </div>

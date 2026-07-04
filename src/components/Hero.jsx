@@ -1,10 +1,12 @@
 import SaleBadge from "./SaleBadge";
 import ScrollButton from "./ScrollButton";
 
-import "../styles/hero.css";
+import { heroContent } from "../data/content";
 
 import character from "../assets/images/character-left.png";
 import vehicle from "../assets/images/vehicle-right.png";
+
+import "../styles/hero.css";
 
 function Hero() {
   return (
@@ -18,15 +20,13 @@ function Hero() {
         <div className="hero__content">
 
           <h1 className="hero__title">
-            Распродажа
+            {heroContent.title[0]}
             <br />
-            шутеров
+            {heroContent.title[1]}
           </h1>
 
           <p className="hero__description">
-            От классики до новинок — погрузитесь в мир
-            интенсивных сражений, опасных миссий
-            и приключений.
+            {heroContent.description}
           </p>
 
           <ScrollButton />
@@ -38,13 +38,13 @@ function Hero() {
           <img
             className="hero__character"
             src={character}
-            alt=""
+            alt="Персонаж акции"
           />
 
           <img
             className="hero__vehicle"
             src={vehicle}
-            alt=""
+            alt="Игровая техника"
           />
 
         </div>
